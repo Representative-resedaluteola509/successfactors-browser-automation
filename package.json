@@ -1,7 +1,7 @@
 {
-  "name": "successfactors-browser-automation",
+  "name": "@browser-automation-hub/successfactors-browser-automation",
   "version": "1.0.0",
-  "description": "Browser automation for SAP SuccessFactors — automate employee performance reviews, run workforce analytics, manage compensation cycles, and extract HR data without the OData API.",
+  "description": "Browser automation for SAP SuccessFactors — automate performance reviews, workforce analytics, and HR data extraction",
   "main": "src/actions.js",
   "scripts": {
     "start": "node examples/basic-login.js",
@@ -16,7 +16,7 @@
     "browser-automation",
     "puppeteer",
     "playwright",
-    "anchorbrowser",
+    "anchor-browser",
     "nodejs"
   ],
   "license": "MIT",
@@ -35,5 +35,8 @@
   "homepage": "https://github.com/Browser-Automation-Hub/successfactors-browser-automation#readme",
   "bugs": {
     "url": "https://github.com/Browser-Automation-Hub/successfactors-browser-automation/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
